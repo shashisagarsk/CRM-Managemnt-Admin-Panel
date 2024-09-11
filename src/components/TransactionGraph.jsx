@@ -16,6 +16,13 @@ const TransactionGraph = () => {
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         tension: 0.4,
       },
+      {
+        label: 'Transaction Amount',
+        data: [10, 250, 75, 100],
+        borderColor: 'rgba(511, 16, 25, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        tension: 0.4,
+      },
     ],
   };
 
@@ -33,7 +40,7 @@ const TransactionGraph = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white p-6 rounded-lg shadow-md w-1/2">
       <Line data={data} options={options} />
     </div>
   );

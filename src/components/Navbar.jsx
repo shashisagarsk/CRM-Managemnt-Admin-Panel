@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import Dashboard from "./Dashboard";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -31,20 +32,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-orange-400 p-4 text-white flex justify-between items-center shadow-md">
+    <nav className="bg-orange-400 p-4 text-white flex justify-between items-center shadow-md ">
       {/* Title */}
       <div className="text-lg font-semibold">Analytics Dashboard</div>
 
       {/* Search and User Section */}
       <div className="flex items-center space-x-4">
         {/* Search Bar */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden relative flex-1 lg:block ">
+        <FiSearch className="absolute top-1/2 left-3 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search"
-            className="px-4 py-2 bg-white text-black rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-black text-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-center"
           />
-          <FiSearch className="text-xl text-gray-400 ml-2" />
+         
         </div>
 
         {/* Profile Section */}
@@ -65,7 +67,9 @@ const Navbar = () => {
           {/* Dropdown Menu */}
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 text-gray-800">
+              
               <div className="px-4 py-2">
+                
                 <h3 className="font-semibold">John Doe</h3>
                 <p className="text-sm text-gray-500">john.doe@example.com</p>
               </div>

@@ -6,6 +6,8 @@ import TasksSection from "./components/TasksSection";
 import MessagesSection from "./components/MessagesSection";
 import AnalyticsSection from "./components/AnalyticsSection";
 import PaymentsSection from "./components/PaymentsSection";
+import Dashboard from "./components/Dashboard"
+
 
 const App = () => {
   return (
@@ -13,15 +15,17 @@ const App = () => {
       <div className="flex">
         {/* Sidebar */}
         <Sidebar />
-
+      
         {/* Main Content */}
         <div className="w-full">
           <Navbar />
           <Routes>
+            
             <Route path="/tasks" element={<TasksSection />} />
             <Route path="/messages" element={<MessagesSection />} />
             <Route path="/analytics" element={<AnalyticsSection />} />
             <Route path="/payments" element={<PaymentsSection />} />
+            <Route  path="/Dashboard" element={<Dashboard />} />
             
           </Routes>
         </div>

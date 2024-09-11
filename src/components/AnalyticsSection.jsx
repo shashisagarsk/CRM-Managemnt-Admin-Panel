@@ -21,7 +21,7 @@ const AnalyticsSection = () => {
       </div>
 
       {/* Graph Section */}
-      <div className="mt-6">
+      <div className="mt-4">
         <h2 className="text-xl font-bold mb-4">Graph Section</h2>
         <Graph />
       </div>

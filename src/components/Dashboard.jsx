@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="ml-64 md:ml-64 p-6 space-y-6">
+    <div className="p-4 md:p-6 space-y-6">
       {/* Dashboard Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-green-200 p-4 rounded-lg shadow-md flex items-center space-x-4">
