@@ -9,7 +9,7 @@ const Dashboard = () => {
           <div className="text-3xl">💵</div>
           <div>
             <p className="text-sm font-semibold text-gray-700">Total Revenue</p>
-            <p className="text-xl font-bold">$4249</p>
+            <p className="text-xl font-bold">$42049</p>
           </div>
         </div>
 
@@ -17,7 +17,7 @@ const Dashboard = () => {
           <div className="text-3xl">👥</div>
           <div>
             <p className="text-sm font-semibold text-gray-700">Total Users</p>
-            <p className="text-xl font-bold">249</p>
+            <p className="text-xl font-bold">2491</p>
           </div>
         </div>
 

@@ -6,7 +6,8 @@ import {
   FiBarChart,
   FiDollarSign,
   FiMenu,
-  FiX,
+  FiChevronLeft,
+  FiChevronRight,
 } from "react-icons/fi";
 
 const Sidebar = () => {
@@ -15,108 +16,110 @@ const Sidebar = () => {
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  
   };
 
   return (
     <>
-      {/* Sidebar Toggle Button (Menu icon) */}
-      <button
+      {/* Toggle Button */}
+      <div
+        className={`fixed top-4 left-5 z-30 bg-slate-900 text-white p-2 rounded-full cursor-pointer transition-all duration-500 ease-in-out ${
+          isOpen ? "ml-52" : ""
+        }`}
         onClick={toggleSidebar}
-        className="fixed top-4 left-2 z-30 bg-gray-800 text-white p-2 rounded-full focus:outline-none"
       >
-       
-      </button>
+        {isOpen ? <FiChevronLeft size={24} /> : <FiChevronRight size={24} />}
+      </div>
 
       {/* Sidebar Container */}
       <div
-        className={`fixed top-0 left-0 h-screen w-64 bg-gray-800 text-white p-6 space-y-6 z-20 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-1000 ease-in-out shadow-lg`}
+        className={`fixed top-0 left-0 h-screen bg-blue-900 text-white p-4 space-y-6 z-20 transform ${
+          isOpen ? "translate-x-0 w-64" : "translate-x-0 w-16"
+        } transition-all duration-500 ease-in-out shadow-lg`}
       >
         {/* Sidebar Header */}
-        <div className="flex justify-between items-center">
-          <div className="text-3xl">
-            
-            <img 
-              src="src/assets/omfg-logo-black.png"
-              alt="LOGO"
-              className="h-8"
-            />
-          </div>
-
-          
+        <div className="flex items-center justify-between mt-10">
+          {isOpen && (
+            <div className="flex items-center space-x-2">
+              <img
+                src="src/assets/omfg-logo-black.png"
+                alt="Logo"
+              />
+            </div>
+          )}
         </div>
-
         {/* Sidebar Links */}
-        
-        <ul className="space-y-4">
+        <ul className="space-y-4 mt-8">
           <li>
             <Link
-              to="/Dashboard"
-              className="flex items-center space-x-2 p-4 hover:bg-gray-700"
-              onClick={toggleSidebar}
+              to="/dashboard"
+              className="flex items-center space-x-2 p-2 hover:bg-blue-700 rounded-md"
             >
-              <FiHome />
-              <span>Dashboard</span>
+              <FiHome className="text-xl" />
+              <span
+                className={`transition-all duration-500 ease-in-out ${
+                  isOpen ? "inline-block" : "hidden"
+                }`}
+              >
+                Dashboard
+              </span>
             </Link>
           </li>
           <li>
             <Link
               to="/tasks"
-              className="flex items-center space-x-2 p-4 hover:bg-gray-700"
-              onClick={toggleSidebar}
+              className="flex items-center space-x-2 p-2 hover:bg-blue-700 rounded-md"
             >
-              <FiHome />
-              <span>Tasks</span>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/messages"
-              className="flex items-center space-x-2 p-4 hover:bg-gray-700"
-              onClick={toggleSidebar}
-            >
-              <FiMessageSquare />
-              <span>Messages</span>
+              <FiMessageSquare className="text-xl" />
+              <span
+                className={`transition-all duration-500 ease-in-out ${
+                  isOpen ? "inline-block" : "hidden"
+                }`}
+              >
+                Tasks
+              </span>
             </Link>
           </li>
           <li>
             <Link
               to="/analytics"
-              className="flex items-center space-x-2 p-4 hover:bg-gray-700"
-              onClick={toggleSidebar}
+              className="flex items-center space-x-2 p-2 hover:bg-blue-700 rounded-md"
             >
-              <FiBarChart />
-              <span>Analytics</span>
+              <FiBarChart className="text-xl" />
+              <span
+                className={`transition-all duration-500 ease-in-out ${
+                  isOpen ? "inline-block" : "hidden"
+                }`}
+              >
+                Analytics
+              </span>
             </Link>
           </li>
           <li>
             <Link
               to="/payments"
-              className="flex items-center space-x-2 p-4 hover:bg-gray-700"
-              onClick={toggleSidebar}
+              className="flex items-center space-x-2 p-2 hover:bg-blue-700 rounded-md"
             >
-              <FiDollarSign />
-              <span>Payments</span>
+              <FiDollarSign className="text-xl" />
+              <span
+                className={`transition-all duration-500 ease-in-out ${
+                  isOpen ? "inline-block" : "hidden"
+                }`}
+              >
+                Payments
+              </span>
             </Link>
           </li>
         </ul>
       </div>
 
-      {/* Background Overlay for mobile */}
-      {isOpen && (
-        <div
-          onClick={toggleSidebar}
-          className="fixed inset-0 bg-black bg-opacity-50 z-10 transition-opacity duration-700"
-        ></div>
-      )}
-
-      {/* Main content area (adjust padding when sidebar is open) */}
+      {/* Main content area adjustment */}
       <div
-        className={`transition-all duration-1000 ease-in-out ${
-          isOpen && "ml-52"
+        className={`transition-all duration-500 ease-in-out ${
+          isOpen ? "ml-52" : "ml-4"
         } p-6`}
       >
+        {/* Your main content goes here */}
        
       </div>
     </>
